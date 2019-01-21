@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\CellScript.cs" />
      <Compile Include="Assets\MazeGenerator.cs" />
+     <Compile Include="Assets\PlayerController.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>/Users/rkmbp/BirdboxMaze/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

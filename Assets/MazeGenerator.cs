@@ -78,6 +78,9 @@ public class MazeGenerator : MonoBehaviour {
     private void Start()
     {
         GenerateMaze(mazeRows, mazeColumns);
+        // position player at center cell
+        Vector2 startPos = centreCells[1].gridPos;
+        
     }
 
     private void GenerateMaze(int rows, int columns)
