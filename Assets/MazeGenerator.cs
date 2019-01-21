@@ -292,7 +292,7 @@ public class MazeGenerator : MonoBehaviour {
         // Get reference to attached CellScript.
         newCell.cScript = newCell.cellObject.GetComponent<CellScript>();
         // Disable Cell sprite, if applicable.
-        if (disableCellSprite) newCell.cellObject.GetComponent<SpriteRenderer>().enabled = false;
+        //if (disableCellSprite) newCell.cellObject.GetComponent<SpriteRenderer>().enabled = false;
 
         // Add to Lists.
         allCells[keyPos] = newCell;
