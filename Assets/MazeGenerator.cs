@@ -78,9 +78,14 @@ public class MazeGenerator : MonoBehaviour {
     private void Start()
     {
         GenerateMaze(mazeRows, mazeColumns);
+        //remove centre cell walls
+        RemoveWall(centreCells[0].cScript, 1);
+        RemoveWall(centreCells[0].cScript, 2);
+        RemoveWall(centreCells[0].cScript, 3);
+        RemoveWall(centreCells[0].cScript, 4);
         // position player at center cell
         Vector2 startPos = centreCells[1].gridPos;
-        
+
     }
 
     private void GenerateMaze(int rows, int columns)
