@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CellScript.cs" />
+     <Compile Include="Assets\clearScript.cs" />
      <Compile Include="Assets\MainMenu.cs" />
      <Compile Include="Assets\MazeGenerator.cs" />
      <Compile Include="Assets\pauseScript.cs" />

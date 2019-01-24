@@ -24,11 +24,11 @@ public class MazeGenerator : MonoBehaviour {
     [Tooltip("How many cells tall is the maze. MUST be an even number. " +
         "If number is odd, it will be reduced by 1.\n\n" +
         "Minimum value of 4.")]
-    public int mazeRows;
+    public static int mazeRows;
     [Tooltip("How many cells wide is the maze. Must be an even number. " +
         "If number is odd, it will be reduced by 1.\n\n" +
         "Minimum value of 4.")]
-    public int mazeColumns;
+    public static int mazeColumns;
 
     [Header("Maze object variables:")]
     [Tooltip("Cell prefab object.")]
