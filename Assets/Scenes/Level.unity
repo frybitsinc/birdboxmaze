@@ -140,10 +140,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6082b161b4fc744f59ee88ee66a1451e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mazeRows: 4
-  mazeColumns: 4
+  mazeRows: 6
+  mazeColumns: 6
   cellPrefab: {fileID: 1064692056}
   disableCellSprite: 1
+  exitPosition: {x: 0, y: 0}
 --- !u!4 &8944424
 Transform:
   m_ObjectHideFlags: 0
@@ -910,6 +911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b423c4624e89f48fab004f4388147e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 987138715}
 --- !u!50 &987138717
 Rigidbody2D:
   serializedVersion: 4

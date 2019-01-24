@@ -8,13 +8,31 @@ public class PlayerController : MonoBehaviour {
 	private float speed = 2;
 	//sound
 	private AudioSource bumpSource;
+	//player position
+	public Transform player;
+	// public Vector2 exitPos;
+	private int mazeCol;
+	private int mazeRow;
 
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
 		bumpSource = GetComponent<AudioSource> ();
+		GameObject mazeGen = GameObject.Find("MazeGenerator");
+		MazeGenerator mazeGenerator = mazeGen.GetComponent<MazeGenerator>();
+		mazeCol = mazeGenerator.mazeColumns;
+		mazeRow = mazeGenerator.mazeRows;
+		// exitPos = mazeGenerator.exitPosition;
 	}
 	
 	void FixedUpdate () {
+		 Debug.Log((Vector2)player.transform.position);
+		// if((Vector2)player.transform.position == exitPos){
+		// 	Time.timeScale = 0;
+		// }
+		Vector2 playerPos = (Vector2)player.transform.position;
+		if( Mathf.Abs(playerPos.x) >= (mazeCol/2) || Mathf.Abs(playerPos.y) >= (mazeRow/2)){
+			Time.timeScale = 0;
+		}
 		float moveHorizontal = Input.GetAxis("Horizontal");
 		float moveVertical = Input.GetAxis("Vertical");
 		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);

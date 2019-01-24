@@ -65,6 +65,8 @@ public class MazeGenerator : MonoBehaviour {
 
     // Size of the cells, used to determine how far apart to place cells during generation.
     private float cellSize;
+    //exit
+    public Vector2 exitPosition;
 
     private GameObject mazeParent;
     #endregion
@@ -78,14 +80,6 @@ public class MazeGenerator : MonoBehaviour {
     private void Start()
     {
         GenerateMaze(mazeRows, mazeColumns);
-        //remove centre cell walls
-        RemoveWall(centreCells[0].cScript, 1);
-        RemoveWall(centreCells[0].cScript, 2);
-        RemoveWall(centreCells[0].cScript, 3);
-        RemoveWall(centreCells[0].cScript, 4);
-        // position player at center cell
-        Vector2 startPos = centreCells[1].gridPos;
-
     }
 
     private void GenerateMaze(int rows, int columns)
@@ -183,6 +177,7 @@ public class MazeGenerator : MonoBehaviour {
 
         Debug.Log("Maze generation finished.");
         Debug.Log("exit = ("+newCell.gridPos.x + ", "+ newCell.gridPos.y+")");
+        exitPosition = newCell.gridPos;
     }
 
     public List<Cell> GetUnvisitedNeighbours(Cell curCell)
