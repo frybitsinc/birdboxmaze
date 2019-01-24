@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour {
 	// public Vector2 exitPos;
 	private int mazeCol;
 	private int mazeRow;
+	//game clear
+	public Transform clearCanvas;
 
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
@@ -21,17 +23,16 @@ public class PlayerController : MonoBehaviour {
 		MazeGenerator mazeGenerator = mazeGen.GetComponent<MazeGenerator>();
 		mazeCol = mazeGenerator.mazeColumns;
 		mazeRow = mazeGenerator.mazeRows;
-		// exitPos = mazeGenerator.exitPosition;
 	}
 	
 	void FixedUpdate () {
-		 Debug.Log((Vector2)player.transform.position);
-		// if((Vector2)player.transform.position == exitPos){
-		// 	Time.timeScale = 0;
-		// }
+		//Debug.Log((Vector2)player.transform.position);
 		Vector2 playerPos = (Vector2)player.transform.position;
 		if( Mathf.Abs(playerPos.x) >= (mazeCol/2) || Mathf.Abs(playerPos.y) >= (mazeRow/2)){
+			//pause
 			Time.timeScale = 0;
+			//show clear menu
+			clearCanvas.gameObject.SetActive(true);
 		}
 		float moveHorizontal = Input.GetAxis("Horizontal");
 		float moveVertical = Input.GetAxis("Vertical");

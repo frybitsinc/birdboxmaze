@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class pauseScript : MonoBehaviour {
-
+	public Transform canvas;
 // Use this for initialization
 	void Start () {
 		
@@ -12,12 +12,20 @@ public class pauseScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Escape)){
-			if(Time.timeScale == 1) {
+			if(canvas.gameObject.activeInHierarchy == false){
 				Time.timeScale = 0;
+				canvas.gameObject.SetActive(true);
 			}
 			else{
 				Time.timeScale = 1;
+				canvas.gameObject.SetActive(false);
 			}
+			// if(Time.timeScale == 1) {
+			// 	Time.timeScale = 0;
+			// }
+			// else{
+			// 	Time.timeScale = 1;
+			// }
 		}
 	}
 }
