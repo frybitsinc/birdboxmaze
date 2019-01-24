@@ -17,9 +17,11 @@ public class clearScript : MonoBehaviour {
 	}
 	public void BackToMain(){
 		SceneManager.LoadScene(MainScene);
+		Time.timeScale = 1;
 	}
 
 	public void Restart(){
 		SceneManager.LoadScene(GameScene);
+		Time.timeScale = 1;
 	}
 }
