@@ -77,7 +77,7 @@ public class MazeGenerator : MonoBehaviour {
      */
     private void Start()
     {
-        GenerateMaze(mazeRows, mazeColumns);
+        //GenerateMaze(mazeRows, mazeColumns);
         //remove centre cell walls
         RemoveWall(centreCells[0].cScript, 1);
         RemoveWall(centreCells[0].cScript, 2);
