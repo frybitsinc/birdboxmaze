@@ -77,7 +77,7 @@ public class MazeGenerator : MonoBehaviour {
      */
     private void Start()
     {
-        //GenerateMaze(mazeRows, mazeColumns);
+        GenerateMaze(mazeRows, mazeColumns);
         //remove centre cell walls
         RemoveWall(centreCells[0].cScript, 1);
         RemoveWall(centreCells[0].cScript, 2);
@@ -182,6 +182,7 @@ public class MazeGenerator : MonoBehaviour {
         else RemoveWall(newCell.cScript, 4);
 
         Debug.Log("Maze generation finished.");
+        Debug.Log("exit = ("+newCell.gridPos.x + ", "+ newCell.gridPos.y+")");
     }
 
     public List<Cell> GetUnvisitedNeighbours(Cell curCell)
